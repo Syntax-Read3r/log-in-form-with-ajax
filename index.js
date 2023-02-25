@@ -16,7 +16,7 @@ $(document).ready(function () {
 					passwordPHP: password,
 				},
 				success: function (res) {
-					console.log(res);
+					$("#response").html(res);
 				},
 				dataType: "text",
 			});
