@@ -17,6 +17,10 @@ $(document).ready(function () {
 				},
 				success: function (res) {
 					$("#response").html(res);
+
+					if(res.indexOf('seccess') >= 0) {
+						window.location = 'hidden.php';
+					}
 				},
 				dataType: "text",
 			});
