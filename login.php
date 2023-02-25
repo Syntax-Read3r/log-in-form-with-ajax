@@ -7,7 +7,8 @@
 
 
         $email = $connection->real_escape_string($_POST['emailPHP']);
-        $password = $connection->real_escape_string($_POST['passwordPHP']);
+        // add md5 encryption to the password
+        $password = md5($connection->real_escape_string($_POST['passwordPHP']));
 
         $data = $connection->query(query:"SELECT id FROM users WHERE email='$email' AND password='$password'");
         // check if there is more that one duplicate of the email and password combination
